@@ -1,1 +1,98 @@
-<p>This is the partial for view 1.</p>
+<body>
+  <div class="flex-container">
+    <div
+      class="inside-container"
+      ng-app="myApp.view1"
+      ng-controller="MyController"
+    >
+      <h3>Permission</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <td><b>Sections</b></td>
+            <td>
+              <label class="container">
+                <input
+                  type="checkbox"
+                  ng-model="view"
+                  ng-change="changeAllView(view)"
+                />
+                Check all
+                <span class="checkmark"></span>
+              </label>
+            </td>
+            <td>
+              <label class="container">
+                <input
+                  type="checkbox"
+                  ng-model="edit"
+                  ng-change="changeAllEdit(edit)"
+                  ng-disabled="editAllDisable"
+                />
+                Check all
+                <span class="checkmark"></span>
+              </label>
+            </td>
+            <td>
+              <label class="container">
+                <input
+                  type="checkbox"
+                  ng-model="remove"
+                  ng-change="changeAllRemove(remove)"
+                  ng-disabled="removeAllDisable"
+                />
+                Check all
+                <span class="checkmark"></span>
+              </label>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in items">
+            <td>{{ item.section }}</td>
+            <td>
+              <label class="container">
+                <input
+                  type="checkbox"
+                  ng-model="item.permission.view"
+                  ng-change="changeView(item)"
+                />
+                View
+                <span class="checkmark"></span>
+              </label>
+            </td>
+            <td>
+              <label class="container">
+                <input
+                  type="checkbox"
+                  ng-model="item.permission.edit"
+                  ng-disabled="!item.permission.view"
+                  ng-change="changeEdit(item)"
+                />
+                Edit
+                <span class="checkmark"></span>
+              </label>
+            </td>
+            <td>
+              <label class="container">
+                <input
+                  type="checkbox"
+                  ng-model="item.permission.remove"
+                  ng-disabled="!item.permission.edit"
+                  ng-change="changeRemove()"
+                />
+                Remove
+                <span class="checkmark"></span>
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="text-align: right">
+        <button class="button" type="submit" ng-click="save()">
+          Save
+        </button>
+      </p>
+    </div>
+  </div>
+</body>
