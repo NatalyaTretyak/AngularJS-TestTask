@@ -8,7 +8,6 @@ framework and a bunch of development and testing tools for instant web developme
 
 The seed app doesn't do much, just shows how to wire two controllers and views together.
 
-
 ## Getting Started
 
 To get you started you can simply clone the `angular-seed` repository and install the dependencies:
@@ -42,8 +41,8 @@ The `depth=1` tells git to only pull down one commit worth of historical data.
 We have two kinds of dependencies in this project: tools and AngularJS framework code. The tools
 help us manage and test the application.
 
-* We get the tools we depend upon and the AngularJS code via `npm`, the [Node package manager][npm].
-* In order to run the end-to-end tests, you will also need to have the
+- We get the tools we depend upon and the AngularJS code via `npm`, the [Node package manager][npm].
+- In order to run the end-to-end tests, you will also need to have the
   [Java Development Kit (JDK)][jdk] installed on your machine. Check out the section on
   [end-to-end testing](#e2e-testing) for more info.
 
@@ -58,11 +57,11 @@ Behind the scenes this will also call `npm run copy-libs`, which copies the Angu
 other front end dependencies. After that, you should find out that you have two new directories in
 your project.
 
-* `node_modules` - contains the npm packages for the tools we need
-* `app/lib` - contains the AngularJS framework files and other front end dependencies
+- `node_modules` - contains the npm packages for the tools we need
+- `app/lib` - contains the AngularJS framework files and other front end dependencies
 
-*Note copying the AngularJS files from `node_modules` to `app/lib` makes it easier to serve the
-files by a web server.*
+_Note copying the AngularJS files from `node_modules` to `app/lib` makes it easier to serve the
+files by a web server._
 
 ### Run the Application
 
@@ -74,7 +73,6 @@ npm start
 ```
 
 Now browse to the app at [`localhost:8000/index.html`][local-app-url].
-
 
 ## Directory Layout
 
@@ -89,14 +87,10 @@ app/                  --> all of the source files for the application
       version-directive_test.js  --> version directive tests
       interpolate-filter.js      --> custom interpolation filter
       interpolate-filter_test.js --> interpolate filter tests
-  view1/                --> the view1 view template and logic
-    view1.html            --> the partial template
-    view1.js              --> the controller logic
-    view1_test.js         --> tests of the controller
-  view2/                --> the view2 view template and logic
-    view2.html            --> the partial template
-    view2.js              --> the controller logic
-    view2_test.js         --> tests of the controller
+  permission/                --> the permission view template and logic
+    permission.html            --> the partial template
+    permission.js              --> the controller logic
+    permission_test.js         --> tests of the controller
   app.js                --> main application module
   index.html            --> app layout file (the main html template file of the app)
   index-async.html      --> just like index.html, but loads js files asynchronously
@@ -108,7 +102,6 @@ package.json          --> Node.js specific metadata, including development tools
 package-lock.json     --> Npm specific metadata, including versions of installed development tools dependencies
 ```
 
-
 ## Testing
 
 There are two kinds of tests in the `angular-seed` application: Unit tests and end-to-end tests.
@@ -118,8 +111,8 @@ There are two kinds of tests in the `angular-seed` application: Unit tests and e
 The `angular-seed` app comes preconfigured with unit tests. These are written in [Jasmine][jasmine],
 which we run with the [Karma][karma] test runner. We provide a Karma configuration file to run them.
 
-* The configuration is found at `karma.conf.js`.
-* The unit tests are found next to the code they are testing and have a `.spec.js` suffix (e.g.
+- The configuration is found at `karma.conf.js`.
+- The unit tests are found next to the code they are testing and have a `.spec.js` suffix (e.g.
   `view1.spec.js`).
 
 The easiest way to run the unit tests is to use the supplied npm script:
@@ -142,16 +135,16 @@ predefined script to do this:
 npm run test-single-run
 ```
 
-
 <a name="e2e-testing"></a>
+
 ### Running End-to-End Tests
 
 The `angular-seed` app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
 are run with the [Protractor][protractor] End-to-End test runner. It uses native events and has
 special features for AngularJS applications.
 
-* The configuration is found at `e2e-tests/protractor-conf.js`.
-* The end-to-end tests are found in `e2e-tests/scenarios.js`.
+- The configuration is found at `e2e-tests/protractor-conf.js`.
+- The end-to-end tests are found in `e2e-tests/scenarios.js`.
 
 Protractor simulates interaction with our web app and verifies that the application responds
 correctly. Therefore, our web server needs to be serving up the application, so that Protractor can
@@ -189,7 +182,6 @@ the [Java Development Kit (JDK)][jdk] to be installed on your local machine. Che
 
 If JDK is not already installed, you can download it [here][jdk-download].
 
-
 ## Updating AngularJS and other dependencies
 
 Since the AngularJS framework library code and tools are acquired through package managers (e.g.
@@ -205,7 +197,6 @@ versions that match the version ranges specified in the `package.json` file.
 If you want to update a dependency to a version newer than what the specificed range would permit,
 you can change the version range in `package.json` and then run `npm run update-deps` as usual.
 
-
 ## Loading AngularJS Asynchronously
 
 The `angular-seed` project supports loading the framework and application scripts asynchronously.
@@ -219,7 +210,6 @@ npm run update-index-async
 
 This will copy the contents of the `angular-loader.js` library file into the `index-async.html`
 page. You can run this every time you update the version of AngularJS that you are using.
-
 
 ## Serving the Application Files
 
@@ -262,7 +252,6 @@ out what is the best way to host the static files to comply with the same origin
 applicable. Usually this is done by hosting the files by the backend server or through
 reverse-proxying the backend server(s) and web server(s).
 
-
 ## Continuous Integration
 
 ### Travis CI
@@ -275,11 +264,9 @@ tests when you push to GitHub.
 You will need to enable the integration between Travis and GitHub. See the
 [Travis website][travis-docs] for instructions on how to do this.
 
-
 ## Contact
 
 For more information on AngularJS please check out [angularjs.org][angularjs].
-
 
 [angularjs]: https://angularjs.org/
 [git]: https://git-scm.com/
